@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: skyblue;
+}
+
+/* main container */
+.container{
+    width: 300px;              /* control size */
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px black;
+}
+
+/* login form */
+.loginbox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+a{
+    float: right;
+}
+input[type="text"], input[type="password"]{
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px;
+}
