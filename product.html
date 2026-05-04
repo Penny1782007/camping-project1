@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Camping Products</title>
+  <style>
+    .navbar ul{
+    list-style-type: none;
+    background-color: rgb(22, 58, 22);
+    padding: 0px;
+    margin: 0px;
+    border-radius: 20px;
+    border: 2px;
+    box-shadow: 8px 8px 7px rgb(135, 67, 67);
+    gap: 4px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: flex;
+}
+.navbar a{
+    text-decoration: none;
+    color: rgb(254, 255, 255);
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 14px;
+    height: 35px;
+    transition: 0.5s;
+    border: 1px;
+    border-radius: 30px;
+    margin-top: 3px;
+}
+.navbar a:hover{
+    color: rgb(0, 0, 0);
+    background-color: aliceblue;
+    transform: translate3d(0, 0, 50px);
+}
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: skyblue;
+        }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card p {
+      color: green;
+      font-weight: bold;
+    }
+
+    button {
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #219150;
+    }
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .card img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Modal (popup) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+  }
+
+  .modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+  }
+/* Hover zoom */
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card img:hover {
+  transform: scale(1.05);
+}
+
+/* Fullscreen viewer */
+.viewer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 999;
+}
+
+/* Full image */
+.viewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* Details overlay */
+.viewer-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+.logo img {
+            width: 250px;
+            height: 100px;
+            object-fit: contain; /* keeps logo ratio */
+        }
+footer {
+            text-align: center;
+            padding: 15px;
+            background: skyblue;
+            color: white;
+            margin-top: 30px;
+        }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Camping Products</h1>
+  <div class="logo">
+    <img src="logo.png" alt="mylogo">
+  </div>
+</header><br>
+    <nav class="navbar">
+        
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="term.html">Terms and Policies</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav><br>
+<div class="container">
+
+  <div class="card">
+    <img src="tent.jpg">
+    <h3>Camping Tent</h3>
+    <p>$120</p>
+    <button onclick="addToCart('Camping Tent')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="bed.jpg">
+    <h3>Sleeping Bag</h3>
+    <p>$60</p>
+    <button onclick="addToCart('Sleeping Bag')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="stove.webp">
+    <h3>Camping Stove</h3>
+    <p>$45</p>
+    <button onclick="addToCart('Camping Stove')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="aidkit.jpg">
+    <h3>Aidkit</h3>
+    <p>$20</p>
+    <button onclick="addToCart('aidkit')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="gascannister.jpg">
+    <h3>gascannister</h3>
+    <p>$35</p>
+    <button onclick="addToCart('gascannister')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="backpack.jpg">
+    <h3>Backpack</h3>
+    <p>$70</p>
+    <button onclick="addToCart('Backpack')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="bottle.jpg">
+    <h3>Water Bottle</h3>
+    <p>$15</p>
+    <button onclick="addToCart('Water Bottle')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="toothbrush.jpg">
+    <h3>toothbrush</h3>
+    <p>$10</p>
+    <button onclick="addToCart('toothbrush')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="hikingshoes.jpg">
+    <h3>hikingshoes</h3>
+    <p>$55</p>
+    <button onclick="addToCart('hikingshoes')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="headlamp.webp">
+    <h3>headlamp</h3>
+    <p>$40</p>
+    <button onclick="addToCart('headlamp')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="pad.webp">
+    <h3>Pad</h3>
+    <p>$50</p>
+    <button onclick="addToCart('Pad')">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="pen.jpg">
+    <h3>Pen</h3>
+    <p>$18</p>
+    <button onclick="addToCart('Pen')">Add to Cart</button>
+  </div>
+
+</div>
+
+<script>
+  function addToCart(productName) {
+    alert(productName + " added to cart!");
+  }
+</script>
+<footer>
+    <p>&copy; 2026 Camping Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+</body>
+</html>
